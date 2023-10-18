@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Website Design</title>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="hero">
+    <nav>
+      <ul>
+        <li><a href="">HOME</a></li>
+        <li><a href="">ABOUT</a></li>
+        <li><a href="">PORTFOLIO</a></li>
+        <li><a href="">PROJECT</a></li>
+        <li><a href="">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="info">
+      <h1>I'm <span id="typewriter">Kumkum Gandhi</span></h1>
+      <p><a href="https://codekky.blogspot.com/">Data scientist</a></p>
+    </div>
+    <div class="img-box">
+      <img
+        src="https://1.bp.blogspot.com/-NfyyTFq0YSo/YHewUrM0NiI/AAAAAAAAQm8/Q4DxncP_C8YDMgq5hdzaZb8aEYsXTeQ_QCLcBGAsYHQ/s861/pattern.png"
+        class="back-img"
+      />
+      <img src="index.jpeg" class="main-img" height="50" />
+    </div>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-YouTube"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+
+  <script>
+    function typeWriter(text, i, fnCallback) {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML = text.substring(
+          0,
+          i + 1
+        );
+        setTimeout(function () {
+          typeWriter(text, i + 1, fnCallback);
+        }, 100);
+      } else if (typeof fnCallback == "function") {
+        setTimeout(fnCallback, 1000);
+      }
+    }
+
+    function startTypewriterLoop() {
+      typeWriter("Kumkum Gandhi", 0, function () {
+        startTypewriterLoop();
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      startTypewriterLoop();
+    });
+
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800,
+          },
+        },
+        color: {
+          value: "#000",
+        },
+        shape: {
+          type: "circle",
+          stroke: {
+            width: 0,
+            color: "#000",
+          },
+          polygon: {
+            nb_sides: 5,
+          },
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: {
+            enable: false,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false,
+          },
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: false,
+            speed: 40,
+            size_min: 0.1,
+            sync: false,
+          },
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#000",
+          opacity: 0.4,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 6,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse",
+          },
+          onclick: {
+            enable: true,
+            mode: "push",
+          },
+          resize: true,
+        },
+        modes: {
+          grab: {
+            distance: 400,
+            line_linked: {
+              opacity: 1,
+            },
+          },
+          bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3,
+          },
+          repulse: {
+            distance: 200,
+            duration: 0.4,
+          },
+          push: {
+            particles_nb: 4,
+          },
+          remove: {
+            particles_nb: 2,
+          },
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
+</body>
+</html>
